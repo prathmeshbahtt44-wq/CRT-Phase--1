@@ -18,10 +18,12 @@ public:
     }
 };
 
-// Child Class (inherits Player)
+// Child Class
 class Cricketer : public Player {
 public:
+
     int runs;
+
 
     Cricketer(string n, int a, int r)
         : Player(n, a) {
@@ -34,27 +36,11 @@ public:
     }
 };
 
-// Grandchild Class (inherits Cricketer)
-class Captain : public Cricketer {
-public:
-    string team;
-
-    Captain(string n, int a, int r, string t)
-        : Cricketer(n, a, r) {
-        team = t;
-    }
-
-    void displayCaptain() {
-        displayCricketer();
-        cout << "Team : " << team << endl;
-    }
-};
-
 int main() {
 
-    Captain c1("Virat Kohli", 36, 14000, "India");
+    Cricketer c1("Virat Kohli", 36, 14000);
 
-    c1.displayCaptain();
+    c1.displayCricketer();
 
     return 0;
 }
